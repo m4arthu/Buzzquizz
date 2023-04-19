@@ -1,0 +1,14 @@
+@media (max-width: 600px){
+    button {
+        width: 324px;
+        font-size: 18px;
+    }
+
+    .box-info-basica {
+        width: 100%;
+    }
+
+    .tela-3-1 h2 {
+        font-size: 20px;
+    }
+}
