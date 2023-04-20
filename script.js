@@ -22,6 +22,11 @@ function perguntaerro() {
       Tem pelo menos 1 resposta correta e 1 errada por
 pergunta,`)
 }
+function Exibirtela3(){
+    document.querySelector('.tela-3-1').classList.remove('escondido');
+    document.querySelector('.containerQuizz').classList.add('escondido');
+    
+}
 
 function criacaoinfobasica() {
     console.log('cria info')

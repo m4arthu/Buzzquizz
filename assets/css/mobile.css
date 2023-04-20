@@ -4,11 +4,11 @@
     font-size: 18px;
   }
 
-  .box-info-basica {
+  .box-info-basica, .criar-pergunta {
     width: 100%;
   }
 
-  .tela-3-1 h2 {
+  .tela-3-1 h2, .tela-3-2 h2 {
     font-size: 20px;
   }
 
