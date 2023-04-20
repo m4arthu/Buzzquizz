@@ -21,26 +21,30 @@
   }
 
   .containerQuizz {
-    margin-inline: auto;
-    margin-top: 40px;
-    width: 375px;
+    margin: 20px auto;
+    width: 340px;
     height: 100%;
     background-color: #e5e5e5;
   }
 
   .criarQuizz {
-    /* Pode remover box-sizing dps que Arthur add no geral */
-    box-sizing: border-box;
     margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+<<<<<<< HEAD
+    padding: 33px 40px;
+
+=======
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
     background-color: #fafafa;
     border: 1px dashed #d5d5d5;
     border-radius: 5px;
   }
 
+<<<<<<< HEAD
+=======
   .sumiu {
     display: none;
   }
@@ -53,6 +57,7 @@
     width: 100%;
   }
 
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
   .criarQuizz > h2 {
     font-weight: 400;
     font-size: 20px;
@@ -64,9 +69,7 @@
     font-weight: 400;
     font-size: 21px;
     color: #ec362d;
-
-    width: 151px;
-    height: 40px;
+    padding: 8px;
 
     background: #fafafa;
     border: 1px dashed #ec362d;
@@ -79,43 +82,54 @@
     background-color: blue;
   }
 
+<<<<<<< HEAD
+  .todoOsQuizzes {
+   
+=======
   .todosOsQuizzes {
     width: 100%;
     padding: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
     flex-direction: column;
     margin-inline: auto;
   }
 
-  .title-todosOsQuizzes,
-  .title-seusQuizzes {
-    align-self: baseline;
+  h2.title-todosOsQuizzes{
+    margin-bottom: 10px;
     margin-top: 35px;
     font-weight: 700;
     font-size: 20px;
     color: #000000;
   }
 
-  .title-seusQuizzes {
-    margin-top: 0;
-    align-self: auto;
+  h2.title-seusQuizzes {
+    margin-bottom: 10px;
+    margin-top: 35px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000000;
   }
 
+<<<<<<< HEAD
+  .todoOsQuizzes .card {
+=======
   .todosOsQuizzes .card {
     margin-top: 14px;
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
     position: relative;
     width: 340px;
     height: 181px;
-    /* background: linear-gradient(
+    background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(0, 0, 0, 0.5) 64.58%,
       #000000 100%
     ); */
     border-radius: 5px;
-    /* background-size: 100%; */
+    background-size: 100%;
   }
 
   .todosOsQuizzes .card img {
@@ -138,6 +152,20 @@
     font-size: 19px;
 
     color: #ffffff;
+  }
+
+  .seusQuizzes {
+    position: relative;
+  }
+  .seusQuizzes img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+ 
+  .escondido {
+    display: none;
   }
 
   /* Caioooooooo */

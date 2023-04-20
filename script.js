@@ -244,14 +244,16 @@ function listarQuizes() {
   let promessa = axios.get(
     'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes'
   ) // promessa da lista de todos os quizes incluindo os do  usuario !!
-  let cardsContainer = document.querySelector('.todosOsQuizzes')
+  let cardsContainer = document.querySelector('#todosOsQuizzes')
+
 
   promessa.then(quizes => {
     quizes = quizes.data
     quizes.forEach(quiz => {
       console.log(quiz)
 
-      cardsContainer.innerHTML += `<div class="card">
+      cardsContainer.innerHTML += 
+      `<div class="card">
     <img src="${quiz.image}">
     <p>${quiz.title}</p>
     </div>`
