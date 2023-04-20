@@ -1,6 +1,9 @@
 let qtdNiveisUsuario, informacoesBasicas;
 let verifPerguntas = { questions: [] };
 
+axios.defaults.headers.common['Authorization'] = 'vqgonafhaOZTHsJVhkbESWSg';
+
+listarQuizes()
 function dadoinvalido() {
     alert(`Dados incorretos, por favor Verifique se:\n
     Todos os campos estão preenchidos,\n
@@ -200,21 +203,13 @@ function verificarPerguntasCriadas(qtdPerguntas) {
     }
     VerificaNivel(qtdNiveisUsuario);
 }
-
-
-
-
-
-
-
-
 function VerificaNivel(qtdNiveisUsuario) {
-
+//função para criar nivei do quizz
 
 }
 
 function SendQuizzAPI() {
-
+//função para envio de objeto com novo quizz, en=m construção, falta parte dos niveis
     const ObjetoPerguntas =
     {
         title: informacoesBasicas.title,
@@ -238,3 +233,24 @@ function SendQuizzAPI() {
     console.log(ObjetoPerguntas);
 
 }
+
+ function listarQuizes() {
+  let promessa =  axios.get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes") // promessa da lista de todos os quizes incluindo os do  usuario !!
+  let cardsContainer = document.querySelector(".todoOsQuizzes")
+
+
+  promessa.then( quizes => {
+   quizes = quizes.data
+   quizes.forEach(quiz => {
+    console.log(quiz)
+    
+    cardsContainer.innerHTML += 
+    `<div class="card">
+    <img src="${quiz.image}">
+    <p>${quiz.title}</p>
+    </div>`
+   });
+  })
+
+ }
+
