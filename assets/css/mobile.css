@@ -16,6 +16,7 @@
 
   main {
     display: block;
+    background-color: yellow;
   }
 
   .containerQuizz {
@@ -78,6 +79,7 @@
   }
 
   .todoOsQuizzes {
+    width: 100%;
     padding: 0 15px;
     display: flex;
     align-items: center;
@@ -115,6 +117,10 @@
       url(../imagens/simpsons.jpeg);
     border-radius: 5px;
     background-size: 100%;
+  }
+
+  .container-cards {
+    width: 100%;
   }
 
   .todoOsQuizzes p {
