@@ -83,7 +83,7 @@ function listarQuizes() {
     'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes'
   ) // promessa da lista de todos os quizes incluindo os do  usuario !!
   let cardsContainer = document.querySelector('#todososquizes')
-  console.log("porra")
+  
 
   promessa.then(quizes => {
     quizes = quizes.data
