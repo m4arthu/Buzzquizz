@@ -58,7 +58,7 @@ function criacaoinfobasica() {
 
  function listarQuizes() {
   let promessa =  axios.get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes") // promessa da lista de todos os quizes incluindo os do  usuario !!
-  let cardsContainer = document.querySelector(".todoOsQuizzes")
+  let cardsContainer = document.querySelector("#todoOsQuizzes")
 
 
   promessa.then( quizes => {
