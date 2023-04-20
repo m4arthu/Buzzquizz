@@ -4,11 +4,13 @@
     font-size: 18px;
   }
 
-  .box-info-basica {
+  .box-info-basica,
+  .criar-pergunta {
     width: 100%;
   }
 
-  .tela-3-1 h2 {
+  .tela-3-1 h2,
+  .tela-3-2 h2 {
     font-size: 20px;
   }
 
@@ -31,13 +33,31 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+<<<<<<< HEAD
     padding: 33px 40px;
 
+=======
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
     background-color: #fafafa;
     border: 1px dashed #d5d5d5;
     border-radius: 5px;
   }
 
+<<<<<<< HEAD
+=======
+  .sumiu {
+    display: none;
+  }
+
+  .container-seusQuizzes {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
   .criarQuizz > h2 {
     font-weight: 400;
     font-size: 20px;
@@ -62,8 +82,17 @@
     background-color: blue;
   }
 
+<<<<<<< HEAD
   .todoOsQuizzes {
    
+=======
+  .todosOsQuizzes {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
     flex-direction: column;
     margin-inline: auto;
   }
@@ -84,12 +113,18 @@
     color: #000000;
   }
 
+<<<<<<< HEAD
   .todoOsQuizzes .card {
+=======
+  .todosOsQuizzes .card {
+    margin-top: 14px;
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
     position: relative;
     width: 340px;
     height: 181px;
 
     background: linear-gradient(
+<<<<<<< HEAD
         180deg,
         rgba(255, 255, 255, 0) 0%,
         rgba(0, 0, 0, 0.5) 64.58%,
@@ -104,9 +139,27 @@
       border-radius: 5px;
       width: 100%;
       height: 100%;
+=======
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 64.58%,
+      #000000 100%
+    );
+    border-radius: 5px;
+    background-size: 100%;
+>>>>>>> 8d5055b60b2c18bcfc346e6b4df335f8f544c467
   }
 
-  .todoOsQuizzes p {
+  .todosOsQuizzes .card img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .container-cards {
+    width: 100%;
+  }
+
+  .todosOsQuizzes p {
     position: absolute;
     text-align: center;
     padding: 0 20px;

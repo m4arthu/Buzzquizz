@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #e5e5e5;
@@ -11,23 +17,29 @@ height: 69px;
 background-color: #ec362d;  
 box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 69px;
+  background-color: #ec362d;
+  box-shadow: 5px 10px 15px rgb(0, 0, 0, 0.2);
 }
 
 .logo {
   color: white;
   font-size: 37px;
-
 }
 
-.tela-3-1 {
+.tela-3-1,
+.tela-3-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e5e5e5;
 }
 
-.tela-3-1 h2 {
+.tela-3-1 h2,
+.tela-3-2 h2 {
   margin-top: 37px;
   margin-bottom: 29px;
   font-weight: 700;
@@ -35,7 +47,8 @@ box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
   font-size: 27px;
 }
 
-.tela-3-1 input {
+.tela-3-1 input,
+.tela-3-2 input {
   width: 100%;
   height: 46px;
   border-radius: 5px;
@@ -48,9 +61,10 @@ box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
   text-align: left;
 }
 
-.box-info-basica {
+.box-info-basica,
+.criar-pergunta {
   background-color: #ffffff;
-  height: 256px;
+
   margin: 0 auto;
   padding: 21px 18px 24px 18px;
   box-shadow: 0px 0px 10px 0px #0000000d;
@@ -68,10 +82,154 @@ button {
   font-size: 20px;
 }
 
+.criar-pergunta img {
+  width: 26px;
+  height: 23px;
+}
+
+.escondido {
+  display: none;
+}
+
 /* Caiooooo */
 
 main {
+  display: block;
+}
+
+.containerQuizz {
+  margin-inline: auto;
+  margin-top: 40px;
+  /* width: 80%; */
+  /* background-color: red; */
+  height: 100%;
+  width: 100%;
+  /* background-color: #e5e5e5; */
+}
+
+.criarQuizz {
+  /* Pode remover box-sizing dps que Arthur add no geral */
+  box-sizing: border-box;
+  margin-top: 77px;
+  width: 1050px;
+  height: 181px;
+  width: 80%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* padding: 0 400px; */
+  background-color: #fafafa;
+  border: 1px dashed #d5d5d5;
+  border-radius: 5px;
+}
+
+.sumiu {
   display: none;
+}
+
+.container-seusQuizzes {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 20px;
+  width: 100%;
+}
+
+.criarQuizz > h2 {
+  font-weight: 400;
+  font-size: 20px;
+  color: #b9b9b9;
+  text-align: center;
+}
+
+.criarQuizz > button {
+  margin-top: 40px;
+  font-weight: 400;
+  font-size: 21px;
+  color: #ec362d;
+
+  width: 151px;
+  height: 40px;
+
+  background: #fafafa;
+  border: 1px dashed #ec362d;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.criarQuizz > button:hover {
+  background-color: blue;
+}
+
+.todosOsQuizzes {
+  margin-top: 20px;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+}
+.container-cards {
+  margin-top: 14px;
+  flex-wrap: wrap;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-inline: auto;
+  margin-bottom: 20px;
+}
+
+.title-todosOsQuizzes,
+.title-seusQuizzes {
+  align-self: baseline;
+  margin-top: 35px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+}
+
+.title-seusQuizzes {
+  margin-top: 0;
+  align-self: auto;
+}
+
+.todosOsQuizzes .card {
+  position: relative;
+  width: 340px;
+  height: 181px;
+  /* background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 64.58%,
+      #000000 100%
+    ),
+    url(../imagens/simpsons.jpeg); */
+  border-radius: 5px;
+  background-size: 100%;
+}
+
+.todosOsQuizzes .card img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.todosOsQuizzes p {
+  position: absolute;
+  text-align: center;
+  padding: 0 20px;
+  left: 0;
+  bottom: 7px;
+
+  font-weight: 400;
+  font-size: 19px;
+
+  color: #ffffff;
 }
 
 /* Caiooooo */
