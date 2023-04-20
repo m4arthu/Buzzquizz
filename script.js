@@ -1,6 +1,6 @@
 let qtdNiveisUsuario, informacoesBasicas
 
-axios.defaults.headers.common['Authorization'] = 'vqgonafhaOZTHsJVhkbESWSg';
+axios.defaults.headers.common['Authorization'] = 'vqgonafhaOZTHsJVhkbESWSg'
 
 listarQuizes()
 function dadoinvalido() {
@@ -56,23 +56,21 @@ function criacaoinfobasica() {
   }
 }
 
- function listarQuizes() {
-  let promessa =  axios.get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes") // promessa da lista de todos os quizes incluindo os do  usuario !!
-  let cardsContainer = document.querySelector(".todoOsQuizzes")
+function listarQuizes() {
+  let promessa = axios.get(
+    'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes'
+  ) // promessa da lista de todos os quizes incluindo os do  usuario !!
+  let cardsContainer = document.querySelector('.todosOsQuizzes')
 
+  promessa.then(quizes => {
+    quizes = quizes.data
+    quizes.forEach(quiz => {
+      console.log(quiz)
 
-  promessa.then( quizes => {
-   quizes = quizes.data
-   quizes.forEach(quiz => {
-    console.log(quiz)
-    
-    cardsContainer.innerHTML += 
-    `<div class="card">
+      cardsContainer.innerHTML += `<div class="card">
     <img src="${quiz.image}">
     <p>${quiz.title}</p>
     </div>`
-   });
+    })
   })
-
- }
-
+}

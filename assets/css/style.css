@@ -10,19 +10,17 @@ body {
 }
 
 header {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 69px;
-background-color: #ec362d;  
-box-shadow: 5px 10px 15px rgb(0, 0, 0, 0.2);
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 69px;
+  background-color: #ec362d;
+  box-shadow: 5px 10px 15px rgb(0, 0, 0, 0.2);
 }
 
 .logo {
   color: white;
   font-size: 37px;
-
 }
 
 .tela-3-1 {
@@ -113,10 +111,11 @@ main {
 }
 
 .container-seusQuizzes {
-  /* display: flex; */
-  display: none;
+  margin-top: 20px;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 20px;
   width: 100%;
 }
 
@@ -124,6 +123,7 @@ main {
   font-weight: 400;
   font-size: 20px;
   color: #b9b9b9;
+  text-align: center;
 }
 
 .criarQuizz > button {
@@ -146,7 +146,8 @@ main {
   background-color: blue;
 }
 
-.todoOsQuizzes {
+.todosOsQuizzes {
+  margin-top: 20px;
   width: 80%;
   align-items: center;
   justify-content: center;
@@ -155,11 +156,10 @@ main {
 .container-cards {
   margin-top: 14px;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 0 15px;
+  gap: 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   margin-inline: auto;
   margin-bottom: 20px;
 }
@@ -178,23 +178,29 @@ main {
   align-self: auto;
 }
 
-.todoOsQuizzes .card {
+.todosOsQuizzes .card {
   position: relative;
   width: 340px;
   height: 181px;
-
-  background: linear-gradient(
+  /* background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(0, 0, 0, 0.5) 64.58%,
       #000000 100%
     ),
-    url(../imagens/simpsons.jpeg);
+    url(../imagens/simpsons.jpeg); */
   border-radius: 5px;
   background-size: 100%;
 }
 
-.todoOsQuizzes p {
+.todosOsQuizzes .card img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.todosOsQuizzes p {
   position: absolute;
   text-align: center;
   padding: 0 20px;
