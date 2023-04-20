@@ -103,6 +103,18 @@
     ); 
     border-radius: 5px;
     background-size: 100%;
+    
+      background-size: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      z-index: 1;
+    }
+    
+    .todoOsQuizzes .card img {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      
   }
 
   .todosOsQuizzes .card img {
@@ -120,22 +132,25 @@
     padding: 0 20px;
     left: 0;
     bottom: 7px;
-
+    word-break: break-all;
     font-weight: 400;
     font-size: 19px;
 
     color: #ffffff;
   }
 
-  .seusQuizzes {
+  .todosOsQuizzes {
     position: relative;
   }
-  .seusQuizzes img {
+  .todosOsQuizzes img {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 30px;
   }
 
+  .background {
+    top:35px;
+  }
  
   .escondido {
     display: none;

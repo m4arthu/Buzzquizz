@@ -15,14 +15,7 @@ justify-content: center;
 align-items: center;
 height: 69px;
 background-color: #ec362d;  
-box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 69px;
-  background-color: #ec362d;
-  box-shadow: 5px 10px 15px rgb(0, 0, 0, 0.2);
+box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -109,7 +102,7 @@ main {
 
 .criarQuizz {
   /* Pode remover box-sizing dps que Arthur add no geral */
-  box-sizing: border-box;
+  
   margin-top: 77px;
   width: 1050px;
   height: 181px;
@@ -201,47 +194,45 @@ main {
   position: relative;
   width: 340px;
   height: 181px;
-
   border-radius: 5px;
 }
 
-.todosOsQuizzes .card img {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 10px;
-  object-fit: cover;
-  position: relative;
-  z-index: 1;
-}
 
-.todosOsQuizzes .card::before {
-  content: '';
+.background{
   position: absolute;
-  z-index: 10;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  bottom: 0;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 0.5) 65.1%,
+    rgba(0, 0, 0, 0.5) 64.58%,
     #000000 100%
-  );
+  ); 
+  background-size: 100%;
   border-radius: 5px;
+  z-index: 1;
 }
+.todosOsQuizzes .card img {
+  width: 100%;
+  height:100%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  position: relative;
+}
+
+
 
 .todosOsQuizzes p {
   position: absolute;
   text-align: center;
   padding: 0 20px;
   left: 0;
-  bottom: 7px;
-  z-index: 11;
+  bottom: 5px;
 
   font-weight: 400;
   font-size: 19px;
-
+  z-index: 3;
   color: #ffffff;
 }
 
