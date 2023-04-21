@@ -195,6 +195,7 @@ main {
   width: 340px;
   height: 181px;
   border-radius: 5px;
+  word-break: break-all;
 }
 
 
