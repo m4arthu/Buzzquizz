@@ -295,10 +295,10 @@ function VerificaNivel(qtdNiveisUsuario) {
 
     //buscar valores dos inputs de Niveis para validar dados
     let i = 0;
+    let x=0;
 
     let arraynivel = [];
     let check;
-
 
     //Verificar os campos das perguntas e criar variavel com objeto das pergunsta para envio ao servidor
     for (i = 0; i < qtdNiveisUsuario; i++) {
@@ -313,7 +313,7 @@ function VerificaNivel(qtdNiveisUsuario) {
             check = true;
         }
 
-        if (titulo.length > 10 && acerto > 0 && acerto < 100 && testeurl(URLNivel) && descricaonivel.length > 30) {
+        if (titulo.length > 10 && acerto >= 0 && acerto < 100 && testeurl(URLNivel) && descricaonivel.length > 30) {
 
 
             let Niveis = {
@@ -323,25 +323,22 @@ function VerificaNivel(qtdNiveisUsuario) {
                 minValue: acerto
             };
             arraynivel.push(Niveis);
-            DadosCriarNovoQuizz.levels = arraynivel;
+            x++;
         } else {
             nivelerro();
             return;
         }
     }
-    if (check) {
+    
+    if (check === true&&x === qtdNiveisUsuario) {
+        DadosCriarNovoQuizz.levels = arraynivel;
 
         SendQuizzAPI();
-        console.log(DadosCriarNovoQuizz);
-
+       
+    }else {
+        nivelerro();
     }
-
-
-
 }
-
-
-
 
 function SendQuizzAPI() {
 
