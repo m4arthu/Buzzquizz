@@ -1,52 +1,60 @@
-let qtdNiveisUsuario, informacoesBasicas;
-let verifPerguntas = { questions: [] };
+let DadosCriarNovoQuizz = {};
+let qtdNiveisUsuario;
+
 
 axios.defaults.headers.common['Authorization'] = 'vqgonafhaOZTHsJVhkbESWSg'
 
 listarQuizes()
 function listarQuizes() {
     let promessa = axios.get(
-      'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes'
+        'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes'
     ) // promessa da lista de todos os quizes incluindo os do  usuario !!
     let cardsContainer = document.querySelector('#todososquizes')
-    
-  
+
+
     promessa.then(quizes => {
-      quizes = quizes.data
-      quizes.forEach(quiz => {
-        console.log(quiz)
-  
-        cardsContainer.innerHTML += 
-        `<div class="card">
+        quizes = quizes.data
+        quizes.forEach(quiz => {
+            console.log(quiz)
+
+            cardsContainer.innerHTML +=
+                `<div class="card">
       <img src="${quiz.image}">
       <p>${quiz.title}</p>
       </div>`
-      })
+        })
     })
-  }
-  
+}
+
 function dadoinvalido() {
     alert(`Dados incorretos, por favor Verifique se:\n
     Todos os campos estão preenchidos,\n
     O título tem entre 20 e 65 caracteres,\n
     A URL é válida,\n
     A quantidade de perguntas é no mínimo 3,\n
-    A quantidade de níveis é no mínimo 2
-    `)
-    console.log('dado invalido')
+    A quantidade de níveis é no mínimo 2`)
 }
 function perguntaerro() {
     alert(`Dados incorretos, por favor verifique se:\n
     Todos os campos estão preenchidos,\n
-     o título tem no mínimo 20 caracteres,\n
-      É uma cor em hexadecimal,\n
-      Tem pelo menos 1 resposta correta e 1 errada por
-pergunta,`)
+    O título tem no mínimo 20 caracteres,\n
+    É uma cor em hexadecimal,\n
+    Tem pelo menos 1 resposta correta e 1 errada por
+    pergunta,`)
 }
-function Exibirtela3(){
+function nivelerro() {
+    alert(`Dados incorretos, por favor verifique se:\n
+    Todos os campos estão preenchidos,\n
+    O título tem no mínimo 10 caracteres,\n
+    A porcentagem está entre 0 e 100,\n
+    Tem um nível 0,\n
+    A descrição tem no mínimo 30 caracteres`)
+}
+
+function Exibirtela3() {
     document.querySelector('.tela-3-1').classList.remove('escondido');
     document.querySelector('.containerQuizz').classList.add('escondido');
-    
+
 }
 
 function criacaoinfobasica() {
@@ -67,12 +75,9 @@ function criacaoinfobasica() {
             console.log('if pergunta')
             if (niveis >= 2 && testeurl(url)) {
                 console.log('if nivel')
-                const tela31 = document.querySelector('.tela-3-1')
-                tela31.classList.add('escondido')
-                informacoesBasicas = {
-                    image: url,
-                    title: titulo
-                }
+
+                DadosCriarNovoQuizz.title = titulo;
+                DadosCriarNovoQuizz.image = url;
                 let qtdPerguntas = Number(perguntas)
                 qtdNiveisUsuario = Number(niveis)
                 criarPerguntas(qtdPerguntas);
@@ -107,8 +112,7 @@ function testeCor(cor) {
 
 function criarPerguntas(qtdPerguntas) {
     //criar titulo, botão e box de perguntas para renderizar perguntas
-    let perguntas = qtdPerguntas;
-    console.log(perguntas)
+    document.querySelector('.tela-3-1').classList.add('escondido')
     document.querySelector('.tela-3-2').classList.remove('escondido');
     let conteudoTela32 = document.querySelector('.tela-3-2');
 
@@ -124,14 +128,14 @@ function criarPerguntas(qtdPerguntas) {
             </button>
             `;
 
-    inserirPergunta(perguntas);
+    renderizarPergunta(qtdPerguntas);
 }
 
-function inserirPergunta(perguntas) {
+function renderizarPergunta(qtdPerguntas) {
     //função renderizar perguntas de acordo quantidade estipulada na criação com informações basicas
     let Box = document.querySelector(".tela-3-2 .box-perguntas");
 
-    for (let i = 1; i <= perguntas; i++) {
+    for (let i = 1; i <= qtdPerguntas; i++) {
         Box.innerHTML += `
         <div class="criar-pergunta">
             <ul id="${i}" class="pergunta${i}">
@@ -171,21 +175,25 @@ function inserirPergunta(perguntas) {
 
 function verificarPerguntasCriadas(qtdPerguntas) {
     //buscar valores dos inputs de perguntas para validar dados
+    let verifPerguntas = { questions: [] };
     let i = 0;
-    let pergunta = document.querySelector(`.pergunta${i + 1}`);
+    let x = 0;
 
-    let titulo = pergunta.querySelector(".titulo").value;
-    let cor = pergunta.querySelector(".cor").value;
-    let respostaCorreta = pergunta.querySelector(".respostaCorreta").value;
-    let URLCorreta = pergunta.querySelector(".urlCorreta").value;
-    let resposta1 = pergunta.querySelector(".resposta1").value;
-    let URL1 = pergunta.querySelector(".URL1").value;
-    let resposta2 = pergunta.querySelector(".resposta2").value;
-    let URL2 = pergunta.querySelector(".URL2").value;
-    let resposta3 = pergunta.querySelector(".resposta3").value;
-    let URL3 = pergunta.querySelector(".URL3").value;
     //Verificar os campos das perguntas e criar variavel com objeto das pergunsta para envio ao servidor
-    for (i = 0; i < qtdPerguntas; i++) {
+    for (i = 0; x < qtdPerguntas; i++) {
+
+        let pergunta = document.querySelector(`.pergunta${i + 1}`);
+
+        let titulo = pergunta.querySelector(".titulo").value;
+        let cor = pergunta.querySelector(".cor").value;
+        let respostaCorreta = pergunta.querySelector(".respostaCorreta").value;
+        let URLCorreta = pergunta.querySelector(".urlCorreta").value;
+        let resposta1 = pergunta.querySelector(".resposta1").value;
+        let URL1 = pergunta.querySelector(".URL1").value;
+        let resposta2 = pergunta.querySelector(".resposta2").value;
+        let URL2 = pergunta.querySelector(".URL2").value;
+        let resposta3 = pergunta.querySelector(".resposta3").value;
+        let URL3 = pergunta.querySelector(".URL3").value;
 
         if (titulo.length > 20 && testeCor(cor) && respostaCorreta != "" && testeurl(URLCorreta) && resposta1 != "" && testeurl(URL1) || resposta2 != "" && testeurl(URL2) || resposta3 != "" && testeurl(URL3)) {
             let respostas = [];
@@ -222,41 +230,126 @@ function verificarPerguntasCriadas(qtdPerguntas) {
                 answers: respostas
             };
             verifPerguntas.questions.push(perguntas);
-            console.log(verifPerguntas);
+
+            x++;
+            console.log(x);
+            console.log(i);
         } else {
             perguntaerro();
             return;
         }
     }
-    VerificaNivel(qtdNiveisUsuario);
+    if (x === qtdPerguntas) {
+        DadosCriarNovoQuizz.questions = verifPerguntas.questions;
+        criarNiveis();
+    }
+}
+
+function criarNiveis() {
+    //criar titulo, botão e box de cadastro de niveis para renderizar campos de cadastro dos niveis
+    document.querySelector('.tela-3-2').classList.add('escondido')
+    document.querySelector('.tela-3-3').classList.remove('escondido');
+    let conteudoTela33 = document.querySelector('.tela-3-3');
+
+    conteudoTela33.innerHTML = '';
+
+    conteudoTela33.innerHTML += `
+        
+            <h2>Agora, decida os níveis!</h2>
+            <div class="box-niveis">
+            </div>
+            <button class="criar-niveis-bt" onclick="VerificaNivel(${qtdNiveisUsuario})">
+            Finalizar Quizz
+            </button>
+            `;
+    renderizarNiveis();
+}
+
+function renderizarNiveis() {
+    //função renderizar nveis de acordo quantidade estipulada na criação com informações basicas
+    let BoxNiveis = document.querySelector(".tela-3-3 .box-niveis");
+
+    for (let i = 1; i <= qtdNiveisUsuario; i++) {
+        BoxNiveis.innerHTML += `
+        <div class="criar-niveis">
+            <ul id="${i}" class="niveis${i}">
+                <div onclick="expandirniveis(${i})">
+                <h2>Nível ${i}</h2>
+                <img class="img-nivel${i}"src="./assets/imagens/create.svg">
+                </div>
+                <li>
+                    <input type="text" placeholder="Título do nível" class="titulo">
+                    <input type="text" placeholder="% de acerto mínima" class="acerto">
+                    <input type="text" placeholder="URL da imagem do nível" class="urlNivel">
+                    <textarea type="text" placeholder="Descrição do nível" class="descricaonivel"></textarea>
+                </li>
+                
+            </ul>
+        </div>
+        `;
+    }
 }
 
 function VerificaNivel(qtdNiveisUsuario) {
 
-//verifica niveis
+    //buscar valores dos inputs de Niveis para validar dados
+    let i = 0;
+
+    let arraynivel = [];
+    let check;
+
+
+    //Verificar os campos das perguntas e criar variavel com objeto das pergunsta para envio ao servidor
+    for (i = 0; i < qtdNiveisUsuario; i++) {
+
+        let nivel = document.querySelector(`.niveis${i + 1}`);
+        let titulo = nivel.querySelector(".titulo").value;
+        let acerto = nivel.querySelector(".acerto").value;
+        let URLNivel = nivel.querySelector(".urlNivel").value;
+        let descricaonivel = nivel.querySelector(".descricaonivel").value;
+
+        if (acerto === 0) {
+            check = true;
+        }
+
+        if (titulo.length > 10 && acerto > 0 && acerto < 100 && testeurl(URLNivel) && descricaonivel.length > 30) {
+
+
+            let Niveis = {
+                title: titulo,
+                image: URLNivel,
+                text: descricaonivel,
+                minValue: acerto
+            };
+            arraynivel.push(Niveis);
+            DadosCriarNovoQuizz.levels = arraynivel;
+        } else {
+            nivelerro();
+            return;
+        }
+    }
+    if (check) {
+
+        SendQuizzAPI();
+        console.log(DadosCriarNovoQuizz);
+
+    }
+
+
+
 }
+
+
+
 
 function SendQuizzAPI() {
 
     const ObjetoPerguntas =
     {
-        title: informacoesBasicas.title,
-        image: informacoesBasicas.image,
-        verifPerguntas,
-        levels: [
-            {
-                title: "Título do nível 1",
-                image: "https://http.cat/411.jpg",
-                text: "Descrição do nível 1",
-                minValue: 0
-            },
-            {
-                title: "Título do nível 2",
-                image: "https://http.cat/412.jpg",
-                text: "Descrição do nível 2",
-                minValue: 50
-            }
-        ]
+        title: DadosCriarNovoQuizz.title,
+        image: DadosCriarNovoQuizz.image,
+        questions: DadosCriarNovoQuizz.questions,
+        levels: DadosCriarNovoQuizz.levels
     }
     console.log(ObjetoPerguntas);
 
