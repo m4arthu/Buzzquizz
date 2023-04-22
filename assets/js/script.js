@@ -19,6 +19,7 @@ function listarQuizes() {
 
             cardsContainer.innerHTML +=
                 `<div class="card">
+            <div class="background"></div>
       <img src="${quiz.image}">
       <p>${quiz.title}</p>
       </div>`
@@ -351,6 +352,8 @@ function SendQuizzAPI() {
         questions: DadosCriarNovoQuizz.questions,
         levels: DadosCriarNovoQuizz.levels
     }
-    console.log(ObjetoPerguntas);
+    axios.post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", ObjetoPerguntas).then((objeto) => {
+        console.log(objeto)
+    })
 
 }

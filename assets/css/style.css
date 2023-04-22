@@ -218,15 +218,6 @@ main {
   border-radius: 5px;
   z-index: 1;
 }
-.todosOsQuizzes .card img {
-  width: 100%;
-  height:100%;
-  margin-bottom: 10px;
-  object-fit: cover;
-  position: relative;
-}
-
-
 
 .todosOsQuizzes p {
   position: absolute;
@@ -240,5 +231,18 @@ main {
   z-index: 3;
   color: #ffffff;
 }
+
+.todosOsQuizzes .card img {
+  width: 100%;
+  height:100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  object-fit: cover;
+  position: relative;
+}
+
+
+
+
 
 /* Caiooooo */
