@@ -65,24 +65,16 @@ function criacaoinfobasica() {
     let url = document.querySelector('.criacao-url').value
     let perguntas = document.querySelector('.criacao-qtd-perguntas').value
     let niveis = document.querySelector('.criacao-qtd-niveis').value
-    console.log(titulo)
-    console.log(perguntas)
-    console.log(niveis)
-    console.log(url)
+    
     //validação dos dados da informação basica
     if (titulo.length >= 20 && titulo.length <= 65) {
-        console.log('if titulo')
         if (perguntas >= 3) {
-            console.log('if pergunta')
-            if (niveis >= 2 && testeurl(url)) {
-                console.log('if nivel')
-
+           if (niveis >= 2 && testeurl(url)) {
                 DadosCriarNovoQuizz.title = titulo;
                 DadosCriarNovoQuizz.image = url;
                 let qtdPerguntas = Number(perguntas)
                 qtdNiveisUsuario = Number(niveis)
                 criarPerguntas(qtdPerguntas);
-
             } else {
                 dadoinvalido()
             }
@@ -96,10 +88,8 @@ function criacaoinfobasica() {
 function testeurl(url) {
     //testar formato do url
     try {
-
         let urls = new URL(url);
         return true;
-
     } catch (err) {
         return false;
     }
@@ -116,11 +106,8 @@ function criarPerguntas(qtdPerguntas) {
     document.querySelector('.tela-3-1').classList.add('escondido')
     document.querySelector('.tela-3-2').classList.remove('escondido');
     let conteudoTela32 = document.querySelector('.tela-3-2');
-
     conteudoTela32.innerHTML = '';
-
     conteudoTela32.innerHTML += `
-        
             <h2>Crie suas perguntas</h2>
             <div class="box-perguntas">
             </div>
@@ -128,14 +115,13 @@ function criarPerguntas(qtdPerguntas) {
                 Prosseguir para criar níveis
             </button>
             `;
-
     renderizarPergunta(qtdPerguntas);
 }
 
 function renderizarPergunta(qtdPerguntas) {
     //função renderizar perguntas de acordo quantidade estipulada na criação com informações basicas
     let Box = document.querySelector(".tela-3-2 .box-perguntas");
-
+    Box.innerHTML='';
     for (let i = 1; i <= qtdPerguntas; i++) {
         Box.innerHTML += `
         <div class="criar-pergunta">
@@ -182,9 +168,7 @@ function verificarPerguntasCriadas(qtdPerguntas) {
 
     //Verificar os campos das perguntas e criar variavel com objeto das pergunsta para envio ao servidor
     for (i = 0; x < qtdPerguntas; i++) {
-
         let pergunta = document.querySelector(`.pergunta${i + 1}`);
-
         let titulo = pergunta.querySelector(".titulo").value;
         let cor = pergunta.querySelector(".cor").value;
         let respostaCorreta = pergunta.querySelector(".respostaCorreta").value;
@@ -224,17 +208,13 @@ function verificarPerguntasCriadas(qtdPerguntas) {
                     isCorrectAnswer: false
                 });
             }
-
             let perguntas = {
                 title: titulo,
                 color: cor,
                 answers: respostas
             };
             verifPerguntas.questions.push(perguntas);
-
-            x++;
-            console.log(x);
-            console.log(i);
+            x++;            
         } else {
             perguntaerro();
             return;
@@ -251,11 +231,8 @@ function criarNiveis() {
     document.querySelector('.tela-3-2').classList.add('escondido')
     document.querySelector('.tela-3-3').classList.remove('escondido');
     let conteudoTela33 = document.querySelector('.tela-3-3');
-
     conteudoTela33.innerHTML = '';
-
     conteudoTela33.innerHTML += `
-        
             <h2>Agora, decida os níveis!</h2>
             <div class="box-niveis">
             </div>
@@ -269,7 +246,7 @@ function criarNiveis() {
 function renderizarNiveis() {
     //função renderizar nveis de acordo quantidade estipulada na criação com informações basicas
     let BoxNiveis = document.querySelector(".tela-3-3 .box-niveis");
-
+    BoxNiveis.innerHTML ='';
     for (let i = 1; i <= qtdNiveisUsuario; i++) {
         BoxNiveis.innerHTML += `
         <div class="criar-niveis">
@@ -296,13 +273,10 @@ function VerificaNivel(qtdNiveisUsuario) {
     //buscar valores dos inputs de Niveis para validar dados
     let i = 0;
     let x=0;
-
     let arraynivel = [];
     let check;
-
     //Verificar os campos das perguntas e criar variavel com objeto das pergunsta para envio ao servidor
     for (i = 0; i < qtdNiveisUsuario; i++) {
-
         let nivel = document.querySelector(`.niveis${i + 1}`);
         let titulo = nivel.querySelector(".titulo").value;
         let acerto = nivel.querySelector(".acerto").value;
@@ -314,7 +288,6 @@ function VerificaNivel(qtdNiveisUsuario) {
         }
 
         if (titulo.length > 10 && acerto >= 0 && acerto < 100 && testeurl(URLNivel) && descricaonivel.length > 30) {
-
 
             let Niveis = {
                 title: titulo,
@@ -334,8 +307,7 @@ function VerificaNivel(qtdNiveisUsuario) {
         DadosCriarNovoQuizz.levels = arraynivel;
 
         SendQuizzAPI();
-       
-    }else {
+     }else {
         nivelerro();
     }
 }
@@ -353,4 +325,9 @@ function SendQuizzAPI() {
         console.log(objeto)
     })
 
+}
+
+function zerarVariaveis(){
+    DadosCriarNovoQuizz = {};
+    qtdNiveisUsuario;
 }
