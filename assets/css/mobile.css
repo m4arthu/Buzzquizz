@@ -140,5 +140,21 @@
     display: none;
   }
 
+  .card-quiz {
+    width: 340px;
+    height: 181px;
+  }
+
+  .card-quiz p {
+    top:150px;
+    width: 320;
+    font-size: 15px;
+    word-break: break-all;
+  }
+
+  .desktop-11 button {
+    width: 340px;
+  }
+
   /* Caioooooooo */
 }
