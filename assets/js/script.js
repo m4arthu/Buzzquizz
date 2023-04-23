@@ -282,12 +282,12 @@ function VerificaNivel(qtdNiveisUsuario) {
         let acerto = nivel.querySelector(".acerto").value;
         let URLNivel = nivel.querySelector(".urlNivel").value;
         let descricaonivel = nivel.querySelector(".descricaonivel").value;
-
+        console.log(descricaonivel.length)
         if (acerto === 0) {
             check = true;
         }
 
-        if (titulo.length > 10 && acerto >= 0 && acerto < 100 && testeurl(URLNivel) && descricaonivel.length > 30) {
+        if (titulo.length > 10 && acerto >= 0 && acerto < 100 && testeurl(URLNivel) && descricaonivel.length >= 30) {
 
             let Niveis = {
                 title: titulo,
@@ -321,10 +321,30 @@ function SendQuizzAPI() {
         questions: DadosCriarNovoQuizz.questions,
         levels: DadosCriarNovoQuizz.levels
     }
+    console.log(objeto)
     axios.post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", ObjetoPerguntas).then((objeto) => {
-        console.log(objeto)
+        renderizarQuizCriado(objeto)
     })
 
+}
+function renderizarQuizCriado(quiz) {
+    quiz = axios.get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/356")
+    .then((Quiz)=> {
+        let tela3 = document.querySelector(".tela-3-3")
+        tela3.classList.add("escondido")
+        let quizCriado = document.querySelector(".desktop-11")
+        quizCriado.innerHTML = 
+        `<h2>Seu Quiz esta pronto!!</h2>
+        <div class = "card-quiz">
+        <div class="background"></div>
+        <img src="${Quiz.data.image}">
+        <p>${Quiz.data.title}</p>
+        </div>
+        <button>Acessar Quiz</button>
+        <button class="white">Voltar para home</button>`
+        quizCriado.classList.remove("escondido")
+    })
+   
 }
 
 function zerarVariaveis(){
