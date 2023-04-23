@@ -57,16 +57,67 @@ box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
   text-align: left;
 }
 
-.box-info-basica,
-.criar-pergunta,
-.box-niveis {
+.box-info-basica{
   background-color: #ffffff;
-
   margin: 0 auto;
-  padding: 21px 18px 24px 18px;
   box-shadow: 0px 0px 10px 0px #0000000d;
   width: 600px;
+  padding: 21px 18px 24px 18px;
 }
+
+
+.criar-pergunta,
+.criar-niveis {
+  background-color: #ffffff;
+ 
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px 0px #0000000d;
+  width: 600px;
+  margin-bottom: 21px;
+}
+
+.criar-pergunta div:first-child,
+.criar-niveis div:first-child {
+  height: 74px;
+  padding-left: 17px;
+  padding-right: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.criar-pergunta ul,
+.criar-niveis ul{
+  height: 74px;
+  overflow: hidden;
+
+}
+
+.criar-pergunta .expandir div:first-child,
+.criar-niveis .expandir div:first-child
+{
+  padding: 0;
+}
+
+.criar-pergunta ul.expandir
+{
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  overflow: unset;
+  padding: 21px 18px 24px 18px;
+}
+.criar-niveis ul.expandir {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  overflow: unset;
+  padding: 21px 18px 24px 18px;
+}
+
+
+
 
 button {
   margin-top: 29px;

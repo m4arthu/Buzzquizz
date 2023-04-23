@@ -126,7 +126,7 @@ function renderizarPergunta(qtdPerguntas) {
         Box.innerHTML += `
         <div class="criar-pergunta">
             <ul id="${i}" class="pergunta${i}">
-                <div onclick="expandirpergunta(${i})">
+                <div onclick="expandir(${i})">
                 <h2>Pergunta ${i}</h2>
                 <img class="img-pergunta${i}"src="./assets/imagens/create.svg">
                 </div>
@@ -251,7 +251,7 @@ function renderizarNiveis() {
         BoxNiveis.innerHTML += `
         <div class="criar-niveis">
             <ul id="${i}" class="niveis${i}">
-                <div onclick="expandirniveis(${i})">
+                <div onclick="expandirN(${i})">
                 <h2>Nível ${i}</h2>
                 <img class="img-nivel${i}"src="./assets/imagens/create.svg">
                 </div>
@@ -350,4 +350,44 @@ function renderizarQuizCriado(quiz) {
 function zerarVariaveis(){
     DadosCriarNovoQuizz = {};
     qtdNiveisUsuario;
+}
+
+function expandir(id) {
+    const SelecionadoAnteriormente = document.querySelector(`.criar-pergunta .expandir`);
+    console.log(SelecionadoAnteriormente);
+    
+    if (SelecionadoAnteriormente !== null) {
+        
+        document.querySelector(`.criar-pergunta .escondido`).classList.toggle('escondido');
+        
+        SelecionadoAnteriormente.classList.toggle('expandir');
+    }
+
+    if(SelecionadoAnteriormente !== document.querySelector(`.criar-pergunta .pergunta${id}`)){
+    
+    const botao = document.querySelector(`.criar-pergunta .pergunta${id}`);
+    
+    botao.classList.toggle('expandir');
+    
+    document.querySelector(`.criar-pergunta .img-pergunta${id}`).classList.toggle('escondido');}
+}
+
+function expandirN(id) {
+    const SelecionadoAnteriormente = document.querySelector(`.criar-niveis .expandir`);
+    console.log(SelecionadoAnteriormente);
+    
+    if (SelecionadoAnteriormente !== null) {
+        
+        document.querySelector(`.criar-niveis .escondido`).classList.toggle('escondido');
+        
+        SelecionadoAnteriormente.classList.toggle('expandir');
+    }
+
+    if(SelecionadoAnteriormente !== document.querySelector(`.criar-niveis .niveis${id}`)){
+    
+    const botao = document.querySelector(`.criar-niveis .niveis${id}`);
+    
+    botao.classList.toggle('expandir');
+    
+    document.querySelector(`.criar-niveis .img-nivel${id}`).classList.toggle('escondido');}
 }
