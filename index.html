@@ -21,7 +21,7 @@
     </header>
 
     <main class="main">
-      <div class="containerQuizz">
+      <div class="containerQuizz escondido">
         <div class="criarQuizz">
           <h2>
             Você não criou nenhum <br />
@@ -175,8 +175,10 @@
           </p>
         </div>
         <div class="buttons-resultado">
-          <button class="restart-quizz">Reiniciar Quizz</button>
-          <button class="back-home" onclick="restartQuizz()">
+          <button class="restart-quizz" onclick="restartQuizz()">
+            Reiniciar Quizz
+          </button>
+          <button class="back-home" onclick="backHome()">
             Voltar pra home
           </button>
         </div>
