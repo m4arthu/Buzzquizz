@@ -60,8 +60,8 @@ function exibirumquizz(quizzz) {
   let banner = document.querySelector('.tela-2')
   banner.innerHTML = ''
   banner.innerHTML = `
-    <div data-test="banner" class="banner">
-    <img
+    <div class="banner">
+    <img data-test="banner"
     class="img-banner"
     src="${umquizz.image}"
     alt=""
@@ -232,7 +232,42 @@ function renderizarPergunta(qtdPerguntas) {
   let Box = document.querySelector('.tela-3-2 .box-perguntas')
   Box.innerHTML = ''
   for (let i = 1; i <= qtdPerguntas; i++) {
+    if(i===1){
     Box.innerHTML += `
+        <div class="criar-pergunta">
+            <ul data-test="question-ctn"  id="${i}" class="pergunta${i} expandir">
+                <div onclick="expandir(${i})">
+                <h2>Pergunta ${i}</h2>
+                <img data-test="toggle" class="img-pergunta${i}"src="./assets/imagens/create.svg"/>
+                </div>
+                <li>
+                    <input data-test="question-input" type="text" placeholder="Texto da pergunta" class="titulo">
+                    <input data-test="question-color-input" type="text" placeholder="Cor de fundo da pergunta" class="cor">
+                </li>
+                <li>
+                    <h2>Resposta correta</h2>
+                    <input data-test="correct-answer-input" type="text" placeholder="Resposta correta" class="respostaCorreta">
+                    <input data-test="correct-img-input" type="text" placeholder="URL da imagem" class="urlCorreta">
+                </li>
+                <li>
+                    <h2>Respostas incorretas</h2>
+                    <div>
+                        <input data-test="wrong-answer-input" type="text" placeholder="Resposta incorreta 1" class="resposta1">
+                        <input data-test="wrong-img-input" type="text" placeholder="URL da imagem 1" class="URL1">
+                    </div>
+                    <div>
+                        <input data-test="wrong-answer-input" type="text" placeholder="Resposta incorreta 2" class="resposta2">
+                        <input data-test="wrong-img-input" type="text" placeholder="URL da imagem 2" class="URL2">
+                    </div>
+                    <div>
+                        <input data-test="wrong-answer-input" type="text" placeholder="Resposta incorreta 3" class="resposta3">
+                        <input data-test="wrong-img-input" type="text" placeholder="URL da imagem 3" class="URL3">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        `}else{
+            Box.innerHTML += `
         <div class="criar-pergunta">
             <ul data-test="question-ctn"  id="${i}" class="pergunta${i}">
                 <div onclick="expandir(${i})">
@@ -266,8 +301,11 @@ function renderizarPergunta(qtdPerguntas) {
             </ul>
         </div>
         `
+
+        }
+
   }
-  expandir(1);
+  
 }
 
 function verificarPerguntasCriadas(qtdPerguntas) {
