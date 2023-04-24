@@ -10,12 +10,12 @@ body {
 }
 
 header {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 69px;
-background-color: #ec362d;  
-box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 69px;
+  background-color: #ec362d;
+  box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -57,7 +57,7 @@ box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
   text-align: left;
 }
 
-.box-info-basica{
+.box-info-basica {
   background-color: #ffffff;
   margin: 0 auto;
   box-shadow: 0px 0px 10px 0px #0000000d;
@@ -65,11 +65,10 @@ box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
   padding: 21px 18px 24px 18px;
 }
 
-
 .criar-pergunta,
 .criar-niveis {
   background-color: #ffffff;
- 
+
   margin: 0 auto;
   box-shadow: 0px 0px 10px 0px #0000000d;
   width: 600px;
@@ -84,24 +83,20 @@ box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .criar-pergunta ul,
-.criar-niveis ul{
+.criar-niveis ul {
   height: 74px;
   overflow: hidden;
-
 }
 
 .criar-pergunta .expandir div:first-child,
-.criar-niveis .expandir div:first-child
-{
+.criar-niveis .expandir div:first-child {
   padding: 0;
 }
 
-.criar-pergunta ul.expandir
-{
+.criar-pergunta ul.expandir {
   height: 850px;
   display: flex;
   flex-direction: column;
@@ -116,9 +111,6 @@ box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.3);
   padding: 21px 18px 24px 18px;
 }
 
-
-
-
 button {
   margin-top: 29px;
   color: #ffffff;
@@ -130,7 +122,8 @@ button {
   font-size: 20px;
 }
 
-.criar-pergunta img, .box-niveis img {
+.criar-pergunta img,
+.box-niveis img {
   width: 26px;
   height: 23px;
 }
@@ -148,16 +141,14 @@ main {
 .containerQuizz {
   margin-inline: auto;
   margin-top: 40px;
-  /* width: 80%; */
-  /* background-color: red; */
   height: 100%;
   width: 100%;
-  /* background-color: #e5e5e5; */
+  background-color: #e5e5e5;
 }
 
 .criarQuizz {
   /* Pode remover box-sizing dps que Arthur add no geral */
-  
+
   margin-top: 77px;
   width: 1050px;
   height: 181px;
@@ -253,8 +244,7 @@ main {
   word-break: break-all;
 }
 
-
-.background{
+.background {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -264,7 +254,7 @@ main {
     rgba(255, 255, 255, 0) 0%,
     rgba(0, 0, 0, 0.5) 64.58%,
     #000000 100%
-  ); 
+  );
   background-size: 100%;
   border-radius: 5px;
   z-index: 1;
@@ -285,7 +275,7 @@ main {
 
 .todosOsQuizzes .card img {
   width: 100%;
-  height:100%;
+  height: 100%;
   margin-bottom: 10px;
   border-radius: 5px;
   object-fit: cover;
@@ -293,7 +283,6 @@ main {
 }
 
 .desktop-11 {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -303,7 +292,7 @@ main {
 
 .desktop-11 h2 {
   color: black;
-  font-weight: 700 ;
+  font-weight: 700;
   font-size: 29px;
   margin: 20px 0;
 }
@@ -312,7 +301,7 @@ main {
   width: 380px;
 }
 
-.card-quiz  {
+.card-quiz {
   display: flex;
   position: relative;
   width: 580px;
@@ -330,7 +319,7 @@ main {
 
 .card-quiz p {
   position: absolute;
-  margin: 0  20px;
+  margin: 0 20px;
   width: 100%;
   height: 100%;
   font-weight: 400;
@@ -339,13 +328,194 @@ main {
   z-index: 4;
 }
 
-
-
 .white {
   color: #3c383c;
-  background-color:#e5e5e5;
+  background-color: #e5e5e5;
   border: inherit;
 }
 
+/* Tela 2 */
 
-/* Caiooooo */
+.tela-2 {
+  width: 100%;
+  height: 227px;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.header-quizz {
+  margin-top: 42px;
+}
+
+.img-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.575);
+}
+
+.title-banner {
+  position: absolute;
+  font-weight: 400;
+  font-size: 39px;
+  color: #ffffff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container-quizz {
+  margin-inline: auto;
+  width: 688px;
+  margin-top: 70px;
+}
+.header-quizz {
+  margin-inline: auto;
+  width: 688px;
+  height: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #434ca0;
+}
+
+.header-quizz h2 {
+  font-weight: 700;
+  font-size: 23px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.container-cardQuizz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cardQuizz:nth-child(1),
+.cardQuizz:nth-child(2) {
+  margin-top: 20px;
+}
+
+.cardQuizz {
+  margin-top: 50px;
+  width: 330px;
+  height: 175px;
+}
+
+.cardQuizz img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardQuizz p {
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+  margin-top: 8px;
+}
+
+.cardQuizz > .wrong-answer {
+  color: red;
+}
+
+.cardQuizz > .correct-answer {
+  color: green;
+}
+
+.not-selected {
+  opacity: 0.5;
+}
+
+.selected {
+  border: 2px solid green;
+}
+
+.tela-resultado {
+  margin-inline: auto;
+  width: 727px;
+  margin-top: 97px;
+}
+
+.header-resultado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  width: 100%;
+  height: 99px;
+  background-color: #ec362d;
+}
+
+.header-resultado h2 {
+  font-weight: 700;
+  font-size: 23px;
+  color: #ffffff;
+}
+
+.conteudo-resultado {
+  margin-top: 20px;
+  gap: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.conteudo-resultado img {
+  width: 50%;
+}
+
+.conteudo-resultado p {
+  display: block;
+  width: 50%;
+
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 25px;
+
+  color: #484848;
+}
+
+.buttons-resultado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-inline: auto;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.buttons-resultado .back-home {
+  font-weight: 400;
+  font-size: 21px;
+  color: #818181;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 80px;
+}
+
+.container-quizz-tela2 {
+  margin-inline: auto;
+  width: 688px;
+}
+
+/* Tela 2 */
