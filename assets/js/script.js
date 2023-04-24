@@ -545,10 +545,15 @@ function backHome() {
 }
 
 function selecionarCard(event) {
-  let teste = event.parentNode
-  console.log(teste)
-  const cards = teste.querySelectorAll(`.cardQuizz`)
-  console.log(cards)
+    let verif = event.parentNode.querySelector('.selected')
+    if(verif!==null){
+        return;
+    }else{
+
+    let teste = event.parentNode;
+    console.log(teste)
+    const cards = teste.querySelectorAll(`.cardQuizz`)
+    console.log(cards)
 
   console.log(cards)
   cards.forEach(cardQuizz =>
@@ -574,7 +579,14 @@ function selecionarCard(event) {
     })
   }, 2000)
 
-  verificaresp(event)
+    event.classList.add('selected')
+    event.classList.add('wrong-answer')
+    event.classList.remove('not-selected')
+
+
+
+    verificaresp(event);
+}
 }
 
 function verificaresp(event) {
