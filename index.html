@@ -34,13 +34,15 @@
           <div class="container-seusQuizzes">
             <h2 class="title-seusQuizzes">Seus Quizzes</h2>
             <a href="#">
-              <img onclick="Exibirtela3()" src="assets/imagens/plus.svg" alt="" />
+              <img
+                onclick="Exibirtela3()"
+                src="assets/imagens/plus.svg"
+                alt=""
+              />
             </a>
           </div>
-          <h2 class="title-todosOsQuizzes">
-            Todos os Quizzes
-          </h2>
-          <div  class="container-cards">
+          <h2 class="title-todosOsQuizzes">Todos os Quizzes</h2>
+          <div class="container-cards">
             <div class="card">
               <div class="background"></div>
               <img src="assets/imagens/simpsons.jpeg" alt="" />
@@ -58,9 +60,9 @@
           </div>
         </div>
 
-        <div  class="todosOsQuizzes">
+        <div class="todosOsQuizzes">
           <h2 class="title-todosOsQuizzes">Todos os Quizzes</h2>
-          <div id ="todososquizes" class="container-cards">
+          <div id="todososquizes" class="container-cards">
             <div class="card">
               <div class="background"></div>
               <img src="assets/imagens/simpsons.jpeg" alt="" />
@@ -108,6 +110,79 @@
       </div>
     </main>
 
+    <div class="tela-2">
+      <div class="banner">
+        <img
+          class="img-banner"
+          src="https://criticalhits.com.br/wp-content/uploads/2022/05/gkpb-cinemark-reexibe-harry-potter.jpg"
+          alt=""
+        />
+        <h2 class="title-banner">O quão Potterhead é você?</h2>
+      </div>
+
+      <div class="container-quizz-tela2">
+        <div class="header-quizz">
+          <h2>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h2>
+        </div>
+        <div class="container-cardQuizz">
+          <div class="cardQuizz">
+            <img
+              src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRv9ICxXjK-LVFv-lKRId6gB45BFoNCLsZ4dk7bZpYGblPLPG-9aYss0Z0wt2PmWDb"
+              alt=""
+            />
+            <p>Gatíneo</p>
+          </div>
+
+          <div class="cardQuizz">
+            <img
+              src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRv9ICxXjK-LVFv-lKRId6gB45BFoNCLsZ4dk7bZpYGblPLPG-9aYss0Z0wt2PmWDb"
+              alt=""
+            />
+            <p>Gatíneo</p>
+          </div>
+
+          <div class="cardQuizz">
+            <img
+              src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRv9ICxXjK-LVFv-lKRId6gB45BFoNCLsZ4dk7bZpYGblPLPG-9aYss0Z0wt2PmWDb"
+              alt=""
+            />
+            <p class="correct-answer">Gatíneo</p>
+          </div>
+
+          <div class="cardQuizz">
+            <img
+              src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcRRv9ICxXjK-LVFv-lKRId6gB45BFoNCLsZ4dk7bZpYGblPLPG-9aYss0Z0wt2PmWDb"
+              alt=""
+            />
+            <p class="wrong-answer">Gatíneo</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tela-resultado">
+        <div class="header-resultado">
+          <h2>88% de acerto: Você é praticamente um aluno de Hogwarts!</h2>
+        </div>
+        <div class="conteudo-resultado">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT91Ze6Oq5pSgb23q9DLHd_qmIspLCwT2em2HB8T3KSaVsVOuAkPpjayz40uGFvgqNRbg&usqp=CAU"
+            alt=""
+          />
+          <p>
+            Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito
+            de comida e clique no botão abaixo para usar o vira-tempo e
+            reiniciar este teste.
+          </p>
+        </div>
+        <div class="buttons-resultado">
+          <button class="restart-quizz">Reiniciar Quizz</button>
+          <button class="back-home" onclick="restartQuizz()">
+            Voltar pra home
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="tela-3-1 escondido">
       <h2>Comece pelo começo</h2>
       <div class="box-info-basica">
@@ -136,10 +211,10 @@
         Prosseguir pra criar perguntas
       </button>
     </div>
-    <div class="tela-3-2 escondido" ></div>
-    <div class="tela-3-3 escondido" ></div>
+    <div class="tela-3-2 escondido"></div>
+    <div class="tela-3-3 escondido"></div>
     <div class="desktop-11"></div>
-        
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/js/script.js"></script>

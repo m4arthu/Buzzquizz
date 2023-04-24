@@ -14,8 +14,6 @@
     font-size: 20px;
   }
 
-  /* Caioooooooo */
-
   main {
     display: block;
   }
@@ -145,10 +143,8 @@
     height: 181px;
   }
 
-  .card-quiz p {
-    top:150px;
-    width: 320;
-    font-size: 15px;
+  .cardQuizz p {
+    font-size: 13px;
     word-break: break-all;
   }
 
@@ -156,5 +152,85 @@
     width: 340px;
   }
 
-  /* Caioooooooo */
+  .tela-2 {
+    margin-inline: auto;
+    width: 375px;
+    height: auto;
+  }
+
+  .banner {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .header-quizz {
+    margin-inline: auto;
+    margin-top: 42px;
+    width: 340px;
+    height: 89px;
+  }
+
+  .container-cardQuizz {
+    margin-inline: auto;
+    width: 340px;
+    display: flex;
+  }
+
+  .cardQuizz:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .cardQuizz,
+  .cardQuizz:nth-child(2),
+  .cardQuizz:nth-child(1) {
+    margin-top: 13px;
+    width: fit-content;
+    height: auto;
+  }
+
+  .cardQuizz img {
+    margin-inline: auto;
+    width: 163px;
+    height: 113px;
+    object-fit: cover;
+  }
+
+  .tela-resultado {
+    width: 340px;
+  }
+
+  .header-resultado {
+    height: 89px;
+  }
+
+  .header-resultado h2 {
+    padding: 22px 16px;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 19px;
+  }
+
+  .conteudo-resultado {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .conteudo-resultado img,
+  .conteudo-resultado p {
+    width: 100%;
+  }
+
+  .buttons-resultado {
+    margin-top: 40px;
+  }
+
+  .header-quizz h2 {
+    word-wrap: break-word;
+    font-size: 19px;
+  }
+
+  .container-quizz-tela2 {
+    width: 100%;
+  }
 }
