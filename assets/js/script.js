@@ -212,7 +212,19 @@ function criarPerguntas(qtdPerguntas) {
                 Prosseguir para criar níveis
             </button>
             `
+
   renderizarPergunta(qtdPerguntas)
+
+  const inputs = document.querySelectorAll('.criar-pergunta input')
+  inputs.forEach(input => {
+    input.addEventListener('focusout', () => {
+      const nextInput =
+        input.parentElement.nextElementSibling.querySelector('input')
+      if (nextInput) {
+        window.scrollBy(0, nextInput.getBoundingClientRect().top - 80)
+      }
+    })
+  })
 }
 
 function renderizarPergunta(qtdPerguntas) {
@@ -467,6 +479,7 @@ function zerarVariaveis() {
 }
 
 function expandir(id) {
+  window.scrollTo(0, 0)
   const SelecionadoAnteriormente = document.querySelector(
     `.criar-pergunta .expandir`
   )
@@ -545,48 +558,45 @@ function backHome() {
 }
 
 function selecionarCard(event) {
-    let verif = event.parentNode.querySelector('.selected')
-    if(verif!==null){
-        return;
-    }else{
-
-    let teste = event.parentNode;
+  let verif = event.parentNode.querySelector('.selected')
+  if (verif !== null) {
+    return
+  } else {
+    let teste = event.parentNode
     console.log(teste)
     const cards = teste.querySelectorAll(`.cardQuizz`)
     console.log(cards)
 
-  console.log(cards)
-  cards.forEach(cardQuizz =>
-    cardQuizz.addEventListener('click', selecionarCard)
-  )
+    console.log(cards)
+    cards.forEach(cardQuizz =>
+      cardQuizz.addEventListener('click', selecionarCard)
+    )
 
-  console.log(event)
-  cards.forEach(card => {
-    if (card !== event) {
-      card.classList.remove('selected')
-      card.classList.add('not-selected')
-    }
-  })
-
-  event.classList.add('selected')
-  event.classList.add('wrong-answer')
-  event.classList.remove('not-selected')
-
-  setTimeout(() => {
-    window.scrollBy({
-      top: 450,
-      behavior: 'smooth'
+    console.log(event)
+    cards.forEach(card => {
+      if (card !== event) {
+        card.classList.remove('selected')
+        card.classList.add('not-selected')
+      }
     })
-  }, 2000)
 
     event.classList.add('selected')
     event.classList.add('wrong-answer')
     event.classList.remove('not-selected')
 
+    setTimeout(() => {
+      window.scrollBy({
+        top: 450,
+        behavior: 'smooth'
+      })
+    }, 2000)
 
+    event.classList.add('selected')
+    event.classList.add('wrong-answer')
+    event.classList.remove('not-selected')
 
-    verificaresp(event);
-}
+    verificaresp(event)
+  }
 }
 
 function verificaresp(event) {
