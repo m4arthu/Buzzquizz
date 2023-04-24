@@ -406,6 +406,7 @@ main {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 97px;
 }
 
 .cardQuizz:nth-child(1),
@@ -417,11 +418,11 @@ main {
   margin-top: 50px;
   width: 330px;
   height: 100%;
-  }
+}
 
 .cardQuizz img {
   width: 330px;
-  height: 175px;  
+  height: 175px;
   object-fit: cover;
 }
 
@@ -445,14 +446,9 @@ main {
   opacity: 0.5;
 }
 
-.selected {
-  border: 2px solid green;
-}
-
 .tela-resultado {
   margin-inline: auto;
   width: 727px;
-  margin-top: 97px;
 }
 
 .header-resultado {
