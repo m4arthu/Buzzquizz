@@ -79,6 +79,10 @@ function geraropcoes(idpergunta){
 
 
     let respostas = umquizz.questions[idpergunta].answers;
+    console.log(respostas);
+
+    respostas = respostas.sort(embaralhar);
+    console.log (respostas);
 
     for (let i = 0; i < respostas.length; i++) {
 
@@ -103,6 +107,10 @@ function geraropcoes(idpergunta){
 
 
 }
+function embaralhar() {
+    return Math.random() -0.5;
+}
+
 
 function selecionarOpcao(){
 
