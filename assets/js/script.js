@@ -279,7 +279,7 @@ function VerificaNivel(qtdNiveisUsuario) {
     for (i = 0; i < qtdNiveisUsuario; i++) {
         let nivel = document.querySelector(`.niveis${i + 1}`);
         let titulo = nivel.querySelector(".titulo").value;
-        let acerto = nivel.querySelector(".acerto").value;
+        let acerto = Number(nivel.querySelector(".acerto").value);
         let URLNivel = nivel.querySelector(".urlNivel").value;
         let descricaonivel = nivel.querySelector(".descricaonivel").value;
         console.log(descricaonivel.length)
@@ -303,7 +303,7 @@ function VerificaNivel(qtdNiveisUsuario) {
         }
     }
     
-    if (check === true&&x === qtdNiveisUsuario) {
+    if (check === true && x === qtdNiveisUsuario) {
         DadosCriarNovoQuizz.levels = arraynivel;
 
         SendQuizzAPI();
@@ -321,7 +321,7 @@ function SendQuizzAPI() {
         questions: DadosCriarNovoQuizz.questions,
         levels: DadosCriarNovoQuizz.levels
     }
-    console.log(objeto)
+    
     axios.post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", ObjetoPerguntas).then((objeto) => {
         renderizarQuizCriado(objeto)
     })
@@ -371,6 +371,7 @@ function expandir(id) {
     
     document.querySelector(`.criar-pergunta .img-pergunta${id}`).classList.toggle('escondido');}
 }
+
 
 function expandirN(id) {
     const SelecionadoAnteriormente = document.querySelector(`.criar-niveis .expandir`);
