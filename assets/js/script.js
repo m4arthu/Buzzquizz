@@ -89,6 +89,7 @@ function geraropcoes(idpergunta) {
                 <p>${respostas[i].text}</p>
             </div>
         `
+        //ccardQuizz${idpergunta}
     } else {
       Opcoes.innerHTML += `
             <div class="cardQuizz opcao" onclick="selecionarCard(this)">
@@ -523,7 +524,11 @@ function backHome() {
 
 
 function selecionarCard(event) {
-    const cards = document.querySelectorAll('.cardQuizz')
+    let teste = event.parentNode;
+    console.log(teste)
+    const cards = teste.querySelectorAll(`.cardQuizz`)
+    console.log(cards)
+     
 console.log(cards)
 cards.forEach(cardQuizz => cardQuizz.addEventListener('click', selecionarCard))
 
@@ -532,10 +537,43 @@ cards.forEach(cardQuizz => cardQuizz.addEventListener('click', selecionarCard))
     if (card !== event) {
       card.classList.remove('selected')
       card.classList.add('not-selected')
+      
+      
     }
   })
 
   event.classList.add('selected')
+  event.classList.add('wrong-answer')
   event.classList.remove('not-selected')
+
+
+
+verificaresp(event);
   
 }
+
+function verificaresp(event){
+
+    let teste = event.parentNode;
+    console.log(teste)
+    const cards = teste.querySelectorAll(`.opcao`)
+    console.log(cards)
+    const certa = teste.querySelectorAll(`.correta`)
+     
+console.log(cards)
+cards.forEach(cardQuizzz => cardQuizzz.addEventListener('click', verificaresp))
+
+    console.log(event);
+  cards.forEach(card => {
+    if (card !== event) {
+      card.classList.remove('correct-answer')
+      card.classList.add('wrong-answer')
+      
+    }
+  })
+  for (i=0;i<cards.length;i++){
+    teste.querySelector(`.correta`).classList.add('correct-answer')
+    teste.querySelector(`.correta`).classList.remove('wrong-answer')
+
+  }
+ }

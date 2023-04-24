@@ -434,11 +434,11 @@ main {
   word-break: break-word;
 }
 
-.cardQuizz > .wrong-answer {
+.wrong-answer p{
   color: red;
 }
 
-.cardQuizz > .correct-answer {
+.correct-answer p{
   color: green;
 }
 
