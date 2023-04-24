@@ -11,17 +11,31 @@ function listarQuizes() {
   ) // promessa da lista de todos os quizes incluindo os do  usuario !!
   let cardsContainer = document.querySelector('#todososquizes')
   cardsContainer.innerHTML = '' //substituir modelos por conteudo da API
+  let Seusquizes = document.querySelector(".seusQuizes")
+  let x = 0
   promessa.then(quizes => {
     quizes = quizes.data
     quizes.forEach(quiz => {
       console.log(quiz)
-
-      cardsContainer.innerHTML += `<div class="card " onclick="BuscarQuizz(${quiz.id})">
+      if(localStorage.getItem(`${quiz.id}`) == quiz) {
+         Seusquizes.innerHTML += `<div class="card " onclick="BuscarQuizz(${quiz.id})">
+         <div class="background"></div>
+   <img src="${quiz.image}">
+   <p>${quiz.title}</p>
+   </div>`
+   x++
+      } else {
+        cardsContainer.innerHTML += `<div class="card " onclick="BuscarQuizz(${quiz.id})">
             <div class="background"></div>
       <img src="${quiz.image}">
       <p>${quiz.title}</p>
       </div>`
+      }
     })
+    if(x!=0) {
+        let criarQuizdiv = document.querySelector(".criarQuizz")
+        criarQuizdiv.classList.add("escondido")
+    }
   })
 }
 
@@ -418,6 +432,7 @@ function SendQuizzAPI() {
     )
     .then(objeto => {
       renderizarQuizCriado(objeto)
+      localStorage.setItem(`${objeto.data.id}`, JSON.stringify(objeto.data))
     })
 }
 function renderizarQuizCriado(quiz) {
