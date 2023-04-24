@@ -60,8 +60,8 @@ function exibirumquizz(quizzz) {
   let banner = document.querySelector('.tela-2')
   banner.innerHTML = ''
   banner.innerHTML = `
-    <div class="banner">
-    <img data-test="banner"
+    <div data-test="banner" class="banner">
+    <img 
     class="img-banner"
     src="${umquizz.image}"
     alt=""
