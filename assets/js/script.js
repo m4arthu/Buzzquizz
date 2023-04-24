@@ -234,8 +234,8 @@ function renderizarPergunta(qtdPerguntas) {
   for (let i = 1; i <= qtdPerguntas; i++) {
     if(i===1){
     Box.innerHTML += `
-        <div class="criar-pergunta">
-            <ul data-test="question-ctn"  id="${i}" class="pergunta${i} expandir">
+        <div data-test="question-ctn" class="criar-pergunta">
+            <ul id="${i}" class="pergunta${i} expandir">
                 <div onclick="expandir(${i})">
                 <h2>Pergunta ${i}</h2>
                 <img data-test="toggle" class="img-pergunta${i}"src="./assets/imagens/create.svg"/>
@@ -268,8 +268,8 @@ function renderizarPergunta(qtdPerguntas) {
         </div>
         `}else{
             Box.innerHTML += `
-        <div class="criar-pergunta">
-            <ul data-test="question-ctn"  id="${i}" class="pergunta${i}">
+        <div data-test="question-ctn" class="criar-pergunta">
+            <ul id="${i}" class="pergunta${i}">
                 <div onclick="expandir(${i})">
                 <h2>Pergunta ${i}</h2>
                 <img data-test="toggle" class="img-pergunta${i}"src="./assets/imagens/create.svg"/>
