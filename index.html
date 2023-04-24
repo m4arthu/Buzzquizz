@@ -26,14 +26,14 @@
           Você não criou nenhum <br />
           quizz ainda :(
         </h2>
-        <button onclick="Exibirtela3()">Criar Quizz</button>
+        <button data-test="create-btn" onclick="Exibirtela3()">Criar Quizz</button>
       </div>
 
       <div class="todosOsQuizzes">
         <div class="container-seusQuizzes">
           <h2 class="title-seusQuizzes">Seus Quizzes</h2>
           <a href="#">
-            <img onclick="Exibirtela3()" src="assets/imagens/plus.svg" alt="" />
+            <img data-test="create-btn" onclick="Exibirtela3()" src="assets/imagens/plus.svg" alt="" />
           </a>
         </div>
         <div id="seusQuizes" class="container-cards"></div>
@@ -59,12 +59,12 @@
   <div class="tela-3-1 escondido">
     <h2>Comece pelo começo</h2>
     <div class="box-info-basica">
-      <input type="text" class="criacao-titulo" placeholder="Título do seu quizz" />
-      <input type="text" class="criacao-url" placeholder="URL da imagem do seu quizz" />
-      <input type="text" class="criacao-qtd-perguntas" placeholder="Quantidade de perguntas do quizz" />
-      <input type="text" class="criacao-qtd-niveis" placeholder="Quantidade de níveis do quizz" />
+      <input data-test="title-input" type="text" class="criacao-titulo" placeholder="Título do seu quizz" />
+      <input data-test="img-input" type="text" class="criacao-url" placeholder="URL da imagem do seu quizz" />
+      <input data-test="questions-amount-input" type="text" class="criacao-qtd-perguntas" placeholder="Quantidade de perguntas do quizz" />
+      <input data-test="levels-amount-input" type="text" class="criacao-qtd-niveis" placeholder="Quantidade de níveis do quizz" />
     </div>
-    <button class="info-basica-bt" onclick="criacaoinfobasica()">
+    <button data-test="go-create-questions" class="info-basica-bt" onclick="criacaoinfobasica()">
       Prosseguir pra criar perguntas
     </button>
   </div>

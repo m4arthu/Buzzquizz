@@ -18,14 +18,14 @@ function listarQuizes() {
     quizes.forEach(quiz => {
       console.log(quiz)
       if (localStorage.getItem(`${quiz.id}`) == quiz) {
-        Seusquizes.innerHTML += `<div class="card " onclick="BuscarQuizz(${quiz.id})">
+        Seusquizes.innerHTML += `<div data-test="my-quiz" class="card " onclick="BuscarQuizz(${quiz.id})">
          <div class="background"></div>
    <img src="${quiz.image}">
    <p>${quiz.title}</p>
    </div>`
         x++
       } else {
-        cardsContainer.innerHTML += `<div class="card " onclick="BuscarQuizz(${quiz.id})">
+        cardsContainer.innerHTML += `<div data-test="others-quiz" class="card " onclick="BuscarQuizz(${quiz.id})">
             <div class="background"></div>
       <img src="${quiz.image}">
       <p>${quiz.title}</p>
@@ -56,7 +56,7 @@ function exibirumquizz(quizzz) {
   let banner = document.querySelector('.tela-2')
   banner.innerHTML = ''
   banner.innerHTML = `
-    <div class="banner">
+    <div data-test="banner" class="banner">
     <img
     class="img-banner"
     src="${umquizz.image}"
@@ -70,7 +70,7 @@ function exibirumquizz(quizzz) {
 
   for (let i = 0; i < umquizz.questions.length; i++) {
     perguntas.innerHTML += `
-        <div class="container-quizz-tela2">
+        <div data-test="question"  class="container-quizz-tela2">
             
                 <div class="header-quizz">
                     <h2>${umquizz.questions[i].title}</h2>
@@ -100,18 +100,18 @@ function geraropcoes(idpergunta) {
   for (let i = 0; i < respostas.length; i++) {
     if (respostas[i].isCorrectAnswer) {
       Opcoes.innerHTML += `
-            <div class="cardQuizz opcao correta" onclick="selecionarCard(this)">
+            <div data-test="answer" class="cardQuizz opcao correta" onclick="selecionarCard(this)">
             
                 <img src="${respostas[i].image}">
-                <p>${respostas[i].text}</p>
+                <p data-test="answer-text">${respostas[i].text}</p>
             </div>
         `
       //ccardQuizz${idpergunta}
     } else {
       Opcoes.innerHTML += `
-            <div class="cardQuizz opcao" onclick="selecionarCard(this)">
+            <div data-test="answer" class="cardQuizz opcao" onclick="selecionarCard(this)">
                 <img src="${respostas[i].image}">
-                <p>${respostas[i].text}</p>
+                <p data-test="answer-text">${respostas[i].text}</p>
             </div>
         `
     }
@@ -204,7 +204,7 @@ function criarPerguntas(qtdPerguntas) {
             <h2>Crie suas perguntas</h2>
             <div class="box-perguntas">
             </div>
-            <button class="criar-pergunta-bt" onclick="verificarPerguntasCriadas(${qtdPerguntas})">
+            <button data-test="go-create-levels" class="criar-pergunta-bt" onclick="verificarPerguntasCriadas(${qtdPerguntas})">
                 Prosseguir para criar níveis
             </button>
             `
@@ -217,34 +217,34 @@ function renderizarPergunta(qtdPerguntas) {
   Box.innerHTML = ''
   for (let i = 1; i <= qtdPerguntas; i++) {
     Box.innerHTML += `
-        <div class="criar-pergunta">
+        <div data-test="question-ctn" class="criar-pergunta">
             <ul id="${i}" class="pergunta${i}">
                 <div onclick="expandir(${i})">
                 <h2>Pergunta ${i}</h2>
-                <img class="img-pergunta${i}"src="./assets/imagens/create.svg">
+                <img data-test="toggle" class="img-pergunta${i}"src="./assets/imagens/create.svg"/>
                 </div>
                 <li>
-                    <input type="text" placeholder="Texto da pergunta" class="titulo">
-                    <input type="text" placeholder="Cor de fundo da pergunta" class="cor">
+                    <input data-test="question-input" type="text" placeholder="Texto da pergunta" class="titulo">
+                    <input data-test="question-color-input" type="text" placeholder="Cor de fundo da pergunta" class="cor">
                 </li>
                 <li>
                     <h2>Resposta correta</h2>
-                    <input type="text" placeholder="Resposta correta" class="respostaCorreta">
-                    <input type="text" placeholder="URL da imagem" class="urlCorreta">
+                    <input data-test="correct-answer-input" type="text" placeholder="Resposta correta" class="respostaCorreta">
+                    <input data-test="correct-img-input" type="text" placeholder="URL da imagem" class="urlCorreta">
                 </li>
                 <li>
                     <h2>Respostas incorretas</h2>
                     <div>
-                        <input type="text" placeholder="Resposta incorreta 1" class="resposta1">
-                        <input type="text" placeholder="URL da imagem 1" class="URL1">
+                        <input data-test="wrong-answer-input" type="text" placeholder="Resposta incorreta 1" class="resposta1">
+                        <input data-test="wrong-img-input" type="text" placeholder="URL da imagem 1" class="URL1">
                     </div>
                     <div>
-                        <input type="text" placeholder="Resposta incorreta 2" class="resposta2">
-                        <input type="text" placeholder="URL da imagem 2" class="URL2">
+                        <input data-test="wrong-answer-input" type="text" placeholder="Resposta incorreta 2" class="resposta2">
+                        <input data-test="wrong-img-input" type="text" placeholder="URL da imagem 2" class="URL2">
                     </div>
                     <div>
-                        <input type="text" placeholder="Resposta incorreta 3" class="resposta3">
-                        <input type="text" placeholder="URL da imagem 3" class="URL3">
+                        <input data-test="wrong-answer-input" type="text" placeholder="Resposta incorreta 3" class="resposta3">
+                        <input data-test="wrong-img-input" type="text" placeholder="URL da imagem 3" class="URL3">
                     </div>
                 </li>
             </ul>
@@ -338,7 +338,7 @@ function criarNiveis() {
             <h2>Agora, decida os níveis!</h2>
             <div class="box-niveis">
             </div>
-            <button class="criar-niveis-bt" onclick="VerificaNivel(${qtdNiveisUsuario})">
+            <button data-test="finish" class="criar-niveis-bt" onclick="VerificaNivel(${qtdNiveisUsuario})">
             Finalizar Quizz
             </button>
             `
@@ -351,17 +351,17 @@ function renderizarNiveis() {
   BoxNiveis.innerHTML = ''
   for (let i = 1; i <= qtdNiveisUsuario; i++) {
     BoxNiveis.innerHTML += `
-        <div class="criar-niveis">
+        <div data-test="level-ctn" class="criar-niveis">
             <ul id="${i}" class="niveis${i}">
-                <div onclick="expandirN(${i})">
+                <div data-test="toggle" onclick="expandirN(${i})">
                 <h2>Nível ${i}</h2>
                 <img class="img-nivel${i}"src="./assets/imagens/create.svg">
                 </div>
                 <li>
-                    <input type="text" placeholder="Título do nível" class="titulo">
-                    <input type="text" placeholder="% de acerto mínima" class="acerto">
-                    <input type="text" placeholder="URL da imagem do nível" class="urlNivel">
-                    <textarea type="text" placeholder="Descrição do nível" class="descricaonivel"></textarea>
+                    <input data-test="level-input" type="text" placeholder="Título do nível" class="titulo">
+                    <input data-test="level-percent-input" type="text" placeholder="% de acerto mínima" class="acerto">
+                    <input data-test="level-img-input" type="text" placeholder="URL da imagem do nível" class="urlNivel">
+                    <textarea data-test="level-description-input" type="text" placeholder="Descrição do nível" class="descricaonivel"></textarea>
                 </li>
                 
             </ul>
@@ -446,13 +446,13 @@ function renderizarQuizCriado(quiz) {
       tela3.classList.add('escondido')
       let quizCriado = document.querySelector('.desktop-11')
       quizCriado.innerHTML = `<h2>Seu Quiz esta pronto!!</h2>
-        <div class = "card-quiz">
+        <div data-test="success-banner" class = "card-quiz">
         <div class="background"></div>
         <img src="${Quiz.data.image}">
         <p>${Quiz.data.title}</p>
         </div>
-        <button>Acessar Quiz</button>
-        <button class="white">Voltar para home</button>`
+        <button data-test="go-quiz" BuscarQuizz(${Quiz.data.id})>Acessar Quiz</button>
+        <button data-test="go-home" class="white" onclick="backHome()>Voltar para home</button>`
       quizCriado.classList.remove('escondido')
     })
 }
@@ -636,19 +636,19 @@ function exibirresultado() {
     console.log(position)
 
     resultad.innerHTML = `<div class="header-resultado">
-                 <h2>${porcentagem}% de acerto: ${umquizz.levels[position].minValue}</h2>
+                 <h2 data-test="answer-text">${porcentagem}% de acerto: ${umquizz.levels[position].minValue}</h2>
             </div>
              <div class="conteudo-resultado">
-             <img
+             <img data-test="level-img"
                src="${umquizz.levels[position].image}"
                alt="" />
-              <p>${umquizz.levels[position].text}</p>
+              <p data-test="level-text">${umquizz.levels[position].text}</p>
             </div>
             <div class="buttons-resultado">
-                <button class="restart-quizz" onclick="restartQuizz()">
+                <button data-test="restart" class="restart-quizz" onclick="restartQuizz()">
                     Reiniciar Quizz
                 </button>
-                <button class="back-home" onclick="backHome()">
+                <button data-test="go-home" class="back-home" onclick="backHome()">
                     Voltar pra home
                 </button>
             </div>
