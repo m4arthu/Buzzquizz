@@ -1,97 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/mobile.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="logo">BuzzQuizz</div>
-    </header>
 
-    <main class="main">
-      <div class="containerQuizz">
-        <div class="criarQuizz">
-          <h2>
-            Você não criou nenhum <br />
-            quizz ainda :(
-          </h2>
-          <button onclick="Exibirtela3()">Criar Quizz</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/mobile.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">BuzzQuizz</div>
+  </header>
+
+  <main class="main">
+    <div class="containerQuizz">
+      <div class="criarQuizz">
+        <h2>
+          Você não criou nenhum <br />
+          quizz ainda :(
+        </h2>
+        <button onclick="Exibirtela3()">Criar Quizz</button>
+      </div>
+
+      <div class="todosOsQuizzes">
+        <div class="container-seusQuizzes">
+          <h2 class="title-seusQuizzes">Seus Quizzes</h2>
+          <a href="#">
+            <img onclick="Exibirtela3()" src="assets/imagens/plus.svg" alt="" />
+          </a>
         </div>
+        <div id="seusQuizes" class="container-cards"></div>
+      </div>
 
-        <div class="todosOsQuizzes">
-          <div class="container-seusQuizzes">
-            <h2 class="title-seusQuizzes">Seus Quizzes</h2>
-            <a href="#">
-              <img
-                onclick="Exibirtela3()"
-                src="assets/imagens/plus.svg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div id="seusQuizes" class="container-cards"></div>
-        </div>
+      <div class="todosOsQuizzes">
+        <h2 class="title-todosOsQuizzes">Todos os Quizzes</h2>
+        <div id="todososquizes" class="container-cards">
+          <div class="card">
 
-        <div class="todosOsQuizzes">
-          <h2 class="title-todosOsQuizzes">Todos os Quizzes</h2>
-          <div id="todososquizes" class="container-cards">
             <div class="card">
-             
-            <div class="card">
-             
+
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+  </main>
 
-    <div class="tela-2"></div>
+  <div class="tela-2">
+    <div class="tela-resultado escondido">
+      <div class="div"></div>
+  </div>
 
-    <div class="tela-3-1 escondido">
-      <h2>Comece pelo começo</h2>
-      <div class="box-info-basica">
-        <input
-          type="text"
-          class="criacao-titulo"
-          placeholder="Título do seu quizz"
-        />
-        <input
-          type="text"
-          class="criacao-url"
-          placeholder="URL da imagem do seu quizz"
-        />
-        <input
-          type="text"
-          class="criacao-qtd-perguntas"
-          placeholder="Quantidade de perguntas do quizz"
-        />
-        <input
-          type="text"
-          class="criacao-qtd-niveis"
-          placeholder="Quantidade de níveis do quizz"
-        />
-      </div>
-      <button class="info-basica-bt" onclick="criacaoinfobasica()">
-        Prosseguir pra criar perguntas
-      </button>
+  <div class="tela-3-1 escondido">
+    <h2>Comece pelo começo</h2>
+    <div class="box-info-basica">
+      <input type="text" class="criacao-titulo" placeholder="Título do seu quizz" />
+      <input type="text" class="criacao-url" placeholder="URL da imagem do seu quizz" />
+      <input type="text" class="criacao-qtd-perguntas" placeholder="Quantidade de perguntas do quizz" />
+      <input type="text" class="criacao-qtd-niveis" placeholder="Quantidade de níveis do quizz" />
     </div>
-    <div class="tela-3-2 escondido"></div>
-    <div class="tela-3-3 escondido"></div>
-    <div class="desktop-11"></div>
+    <button class="info-basica-bt" onclick="criacaoinfobasica()">
+      Prosseguir pra criar perguntas
+    </button>
+  </div>
+  <div class="tela-3-2 escondido"></div>
+  <div class="tela-3-3 escondido"></div>
+  <div class="desktop-11"></div>
 
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
