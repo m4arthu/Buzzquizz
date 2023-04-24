@@ -521,17 +521,21 @@ function backHome() {
   })
 }
 
-const cards = document.querySelectorAll('.cardQuizz')
-cards.forEach(cardQuizz => cardQuizz.addEventListener('click', selecionarCard))
 
 function selecionarCard(event) {
+    const cards = document.querySelectorAll('.cardQuizz')
+console.log(cards)
+cards.forEach(cardQuizz => cardQuizz.addEventListener('click', selecionarCard))
+
+    console.log(event);
   cards.forEach(card => {
-    if (card !== event.currentTarget) {
+    if (card !== event) {
       card.classList.remove('selected')
       card.classList.add('not-selected')
     }
   })
 
-  event.currentTarget.classList.add('selected')
-  event.currentTarget.classList.remove('not-selected')
+  event.classList.add('selected')
+  event.classList.remove('not-selected')
+  
 }
