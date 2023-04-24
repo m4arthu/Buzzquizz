@@ -544,6 +544,11 @@ function backHome() {
 
 
 function selecionarCard(event) {
+    let verif = event.parentNode.querySelector('.selected')
+    if(verif!==null){
+        return;
+    }else{
+
     let teste = event.parentNode;
     console.log(teste)
     const cards = teste.querySelectorAll(`.cardQuizz`)
@@ -569,7 +574,7 @@ function selecionarCard(event) {
 
 
     verificaresp(event);
-
+}
 }
 
 function verificaresp(event) {
