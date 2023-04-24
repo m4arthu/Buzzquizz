@@ -12,6 +12,9 @@ function listarQuizes() {
   let cardsContainer = document.querySelector('#todososquizes')
   cardsContainer.innerHTML = '' //substituir modelos por conteudo da API
   let Seusquizes = document.querySelector('.seusQuizes')
+  let todosOsQuizzesSeusQuizzes = document.querySelector(
+    '.todosOsQuizzes-seusQuizzes'
+  )
   let x = 0
   promessa.then(quizes => {
     quizes = quizes.data
@@ -35,6 +38,7 @@ function listarQuizes() {
     if (x != 0) {
       let criarQuizdiv = document.querySelector('.criarQuizz')
       criarQuizdiv.classList.add('escondido')
+      todosOsQuizzesSeusQuizzes.classList.remove('escondido')
     }
   })
 }
