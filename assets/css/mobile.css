@@ -59,12 +59,6 @@
     background: #fafafa;
     border: 1px dashed #ec362d;
     border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .criarQuizz > button:hover {
-    background-color: blue;
   }
 
   .todoOsQuizzes {

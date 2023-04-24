@@ -120,6 +120,13 @@ button {
   height: 54px;
   width: 368px;
   font-size: 20px;
+
+  cursor: pointer;
+  transition: filter 0.3s ease-in-out;
+}
+
+button:hover {
+  filter: brightness(0.9);
 }
 
 .criar-pergunta img,
@@ -201,7 +208,7 @@ main {
 }
 
 .criarQuizz > button:hover {
-  background-color: blue;
+  filter: brightness(0.9);
 }
 
 .todosOsQuizzes {
@@ -434,11 +441,11 @@ main {
   word-break: break-word;
 }
 
-.wrong-answer p{
+.wrong-answer p {
   color: red;
 }
 
-.correct-answer p{
+.correct-answer p {
   color: green;
 }
 
